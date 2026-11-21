@@ -1,0 +1,11 @@
+<Solution>
+  <Project Path="Lexlume.Application.Identity/Lexlume.Application.Identity.csproj" Id="b11d4abf-e6fb-4bf0-9d74-22115393034f" />
+  <Project Path="Lexlume.Application/Lexlume.Application.csproj" Id="de706e88-c7e8-4596-a550-b9778a4596bf" />
+  <Project Path="Lexlume.Common/Lexlume.Common.csproj" Id="8778dab2-90b6-4b12-9952-e807da638b88" />
+  <Project Path="Lexlume.DependencyInjection/Lexlume.DependencyInjection.csproj" Id="ffe6a4a2-6223-4ce5-8e50-62d4894b4999" />
+  <Project Path="Lexlume.Domain/Lexlume.Domain.csproj" Id="f4820410-5b5c-4182-ae9b-daf58c730a58" />
+  <Project Path="Lexlume.Persistence/Lexlume.Persistence.csproj" Id="ac8a5cea-0c0d-49f4-ba34-89bfc4aad5ff" />
+  <Project Path="Lexlume.Test/Lexlume.Test.csproj" Id="7aa865d7-5a97-4412-bbef-438ee3bb1536" />
+  <Project Path="Lexlume.Web.Api/Lexlume.Web.Api.csproj" Id="9cfd6d42-8aa8-47a8-8619-e57e261c723b" />
+  <Project Path="Lexlume.Web.Client/Lexlume.Web.Client.csproj" Id="1828ca27-73fb-4071-89ac-6418ae9630b9" />
+</Solution>
