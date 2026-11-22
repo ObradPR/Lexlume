@@ -3,6 +3,7 @@ using Lexlume.Application;
 using Lexlume.Application.BusinessLogic._Behaviors;
 using Lexlume.Common;
 using Lexlume.Domain.Interfaces;
+using Lexlume.Infrastructure;
 using Lexlume.Persistence.Contexts;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -17,7 +18,7 @@ public static partial class Extensions
         PersistenceServices(services);
         ApplicationServices(services);
         ApplicationIdentityService(services);
-        //InfrastructureService(services);
+        InfrastructureServices(services);
 
         return services;
     }
@@ -51,12 +52,12 @@ public static partial class Extensions
         return services;
     }
 
-    //private static IServiceCollection InfrastructureServices(IServiceCollection services)
-    //{
-    //    services.AddTransient<IExceptionLogger, DbExceptionLogger>();
+    private static IServiceCollection InfrastructureServices(IServiceCollection services)
+    {
+        services.AddTransient<IExceptionLogger, DbExceptionLogger>();
 
-    //    return services;
-    //}
+        return services;
+    }
 
     private static IServiceCollection ApplicationPipelineBehaviors(IServiceCollection services)
     {

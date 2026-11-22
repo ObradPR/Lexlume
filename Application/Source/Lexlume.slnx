@@ -4,6 +4,7 @@
   <Project Path="Lexlume.Common/Lexlume.Common.csproj" Id="8778dab2-90b6-4b12-9952-e807da638b88" />
   <Project Path="Lexlume.DependencyInjection/Lexlume.DependencyInjection.csproj" Id="ffe6a4a2-6223-4ce5-8e50-62d4894b4999" />
   <Project Path="Lexlume.Domain/Lexlume.Domain.csproj" Id="f4820410-5b5c-4182-ae9b-daf58c730a58" />
+  <Project Path="Lexlume.Infrastructure/Lexlume.Infrastructure.csproj" Id="95860988-b274-4def-a661-0ee5fb82f658" />
   <Project Path="Lexlume.Persistence/Lexlume.Persistence.csproj" Id="ac8a5cea-0c0d-49f4-ba34-89bfc4aad5ff" />
   <Project Path="Lexlume.Test/Lexlume.Test.csproj" Id="7aa865d7-5a97-4412-bbef-438ee3bb1536" />
   <Project Path="Lexlume.Web.Api/Lexlume.Web.Api.csproj" Id="9cfd6d42-8aa8-47a8-8619-e57e261c723b" />
