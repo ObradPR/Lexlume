@@ -1,5 +1,6 @@
 using Lexlume.DependencyInjection;
 using Lexlume.Domain.Interfaces;
+using Lexlume.Web.Api.Middlewares;
 using Lexlume.Web.Api.Objects;
 using Microsoft.AspNetCore.ResponseCompression;
 
@@ -45,7 +46,7 @@ app.UseResponseCompression();
 app.UseAuthentication();
 app.UseAuthorization();
 
-//app.UseMiddleware<ExceptionMiddleware>();
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.MapControllers();
 
