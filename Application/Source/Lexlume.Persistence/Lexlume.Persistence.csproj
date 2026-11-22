@@ -20,4 +20,8 @@
     <ProjectReference Include="..\Lexlume.Domain\Lexlume.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>
