@@ -10,7 +10,7 @@ using System.Diagnostics;
 
 namespace Lexlume.Persistence.Contexts;
 
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext : DbContext, IDatabaseContext
 {
     public IIdentityUser CurrentUser { get; private set; }
 
