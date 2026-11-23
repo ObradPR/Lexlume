@@ -23,4 +23,8 @@ public class Constants
 
     public const string SORTING_ORDER_DESC = "desc";
     public const string SORTING_ORDER_ASC = "asc";
+
+    // CORS
+
+    public const string CORS_ANGULAR_CLIENT_POLICY = "AngularClient";
 }

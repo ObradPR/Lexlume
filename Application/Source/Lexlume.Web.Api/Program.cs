@@ -1,3 +1,4 @@
+using Lexlume.Common;
 using Lexlume.DependencyInjection;
 using Lexlume.Domain.Interfaces;
 using Lexlume.Web.Api.Middlewares;
@@ -13,6 +14,18 @@ builder.Services.AddControllers();
 // Add services to the container
 
 builder.Services.AllApplicationServices();
+
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy(Constants.CORS_ANGULAR_CLIENT_POLICY, policy =>
+    {
+        policy
+            .WithOrigins("https://localhost:4200")
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+});
 
 builder.Services.AddControllers();
 builder.Services.AddHttpContextAccessor();
@@ -34,11 +47,7 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
-app.UseCors(builder => builder
-    .AllowAnyHeader()
-    .AllowAnyMethod()
-    .AllowCredentials()
-    .WithOrigins("https://localhost:4200"));
+app.UseCors(Constants.CORS_ANGULAR_CLIENT_POLICY);
 
 app.UseHttpsRedirection();
 app.UseResponseCompression();
