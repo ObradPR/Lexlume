@@ -9,6 +9,8 @@ public interface IDatabaseContext
 
     DbSet<ErrorLog> ErrorLogs { get; set; }
 
+    DbSet<User> Users { get; set; }
+
     // methods
 
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);

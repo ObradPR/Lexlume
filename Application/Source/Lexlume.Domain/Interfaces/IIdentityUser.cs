@@ -10,9 +10,9 @@ public interface IIdentityUser
 
     string Username { get; }
 
-    IEnumerable<eSystemRole> Roles { get; }
+    eSystemRole? RoleId { get; }
 
     bool IsAuthenticated { get; }
 
-    bool HasRole(IEnumerable<eSystemRole> roles);
+    bool HasRole(eSystemRole role);
 }

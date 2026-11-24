@@ -31,7 +31,7 @@ public partial class ApplicationDbContext : DbContext, IDatabaseContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.HasDefaultSchema(Constants.DEFAULT_DB_SCHEMA);
+        modelBuilder.HasDefaultSchema(Constants.DB_DEFAULT_SCHEMA);
 
         modelBuilder.ApplyEntityConfigurations(typeof(BaseDomain).Assembly);
         modelBuilder.ApplyGlobalSoftDeleteFilter();

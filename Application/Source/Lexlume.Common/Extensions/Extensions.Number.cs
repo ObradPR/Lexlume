@@ -27,4 +27,14 @@ public static partial class Extensions
     public static bool IsNotEmpty(this int number) => number > 0;
 
     public static bool IsNotEmpty(this long number) => number > 0;
+
+    public static bool IsNumericType(Type type)
+    {
+        return type == typeof(byte) || type == typeof(sbyte) ||
+               type == typeof(short) || type == typeof(ushort) ||
+               type == typeof(int) || type == typeof(uint) ||
+               type == typeof(long) || type == typeof(ulong) ||
+               type == typeof(float) || type == typeof(double) ||
+               type == typeof(decimal);
+    }
 }

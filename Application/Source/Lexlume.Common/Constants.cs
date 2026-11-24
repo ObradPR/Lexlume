@@ -1,4 +1,6 @@
-﻿namespace Lexlume.Common;
+﻿using System.Text.RegularExpressions;
+
+namespace Lexlume.Common;
 
 public class Constants
 {
@@ -10,9 +12,11 @@ public class Constants
     public const string SYSTEM_USER_USERNAME = "Lexlume";
     public const string SYSTEM_USER_EMAIL = "lexlume@gmail.com";
 
-    // Database
+    // DB
 
-    public const string DEFAULT_DB_SCHEMA = "dbo";
+    public const string DB_DEFAULT_SCHEMA = "dbo";
+
+    public const string DB_TYPE_DATE = "date";
 
     // Grid - Params
 
@@ -27,4 +31,8 @@ public class Constants
     // CORS
 
     public const string CORS_ANGULAR_CLIENT_POLICY = "AngularClient";
+
+    // Validations
+
+    public static readonly Regex REGEX_PASSWORD = new(@"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^a-zA-Z0-9]).{8,}$");
 }
