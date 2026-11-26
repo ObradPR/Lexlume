@@ -4,7 +4,7 @@ using Reinforced.Typings.Ast;
 using Reinforced.Typings.Ast.TypeNames;
 using Reinforced.Typings.Generators;
 
-namespace Lexlume.Api.ReinforcedTypings.Generator;
+namespace Lexlume.Web.Api.ReinforcedTypings.Generator;
 
 public class AngularControllerGenerator : ClassCodeGenerator
 {

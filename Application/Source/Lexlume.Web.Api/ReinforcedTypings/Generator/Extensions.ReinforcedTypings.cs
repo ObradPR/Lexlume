@@ -1,6 +1,6 @@
 ﻿using Reinforced.Typings.Ast.TypeNames;
 
-namespace LexLume.Api.ReinforcedTypings.Generator;
+namespace Lexlume.Web.Api.ReinforcedTypings.Generator;
 
 public static class Extensions
 {

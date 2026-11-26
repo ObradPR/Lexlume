@@ -1,4 +1,4 @@
-﻿namespace Lexlume.Api.ReinforcedTypings;
+﻿namespace Lexlume.Web.Api.ReinforcedTypings;
 
 public enum Providers
 {

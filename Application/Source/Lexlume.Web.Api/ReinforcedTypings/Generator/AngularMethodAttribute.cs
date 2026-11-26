@@ -1,7 +1,6 @@
-﻿using Lexlume.Api.ReinforcedTypings.Generator;
-using Reinforced.Typings.Attributes;
+﻿using Reinforced.Typings.Attributes;
 
-namespace LexLume.Api.ReinforcedTypings.Generator;
+namespace Lexlume.Web.Api.ReinforcedTypings.Generator;
 
 public class AngularMethodAttribute : TsFunctionAttribute
 {

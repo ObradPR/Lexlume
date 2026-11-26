@@ -2,7 +2,7 @@
 using Lexlume.Application.Dtos.Users;
 using Lexlume.Domain.Common;
 using Lexlume.Web.Api.Controllers._Base;
-using LexLume.Api.ReinforcedTypings.Generator;
+using Lexlume.Web.Api.ReinforcedTypings.Generator;
 using MediatR;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;

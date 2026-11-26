@@ -5,7 +5,7 @@ using Reinforced.Typings.Generators;
 using System.ComponentModel;
 using System.Reflection;
 
-namespace LexLume.Api.ReinforcedTypings.Generator;
+namespace Lexlume.Web.Api.ReinforcedTypings.Generator;
 
 public class EnumProviderGenerator : ClassCodeGenerator
 {

@@ -1,5 +1,4 @@
-﻿using LexLume.Api.ReinforcedTypings.Generator;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.OData.Query;
@@ -11,7 +10,7 @@ using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Lexlume.Api.ReinforcedTypings.Generator;
+namespace Lexlume.Web.Api.ReinforcedTypings.Generator;
 
 public class AngularActionCallGenerator : MethodCodeGenerator
 {

@@ -1,4 +1,4 @@
-﻿namespace LexLume.Api.ReinforcedTypings.Generator;
+﻿namespace Lexlume.Web.Api.ReinforcedTypings.Generator;
 
 [AttributeUsage(AttributeTargets.Field)]
 public class EnumProviderAttribute<T> : EnumProviderAttribute

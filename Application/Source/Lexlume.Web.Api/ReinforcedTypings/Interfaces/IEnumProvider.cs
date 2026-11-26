@@ -1,4 +1,4 @@
-﻿namespace LexLume.Api.ReinforcedTypings;
+﻿namespace Lexlume.Web.Api.ReinforcedTypings;
 
 internal interface IEnumProvider
 {

@@ -1,14 +1,12 @@
-﻿using Lexlume.Api.ReinforcedTypings.Generator;
-using Lexlume.Common;
+﻿using Lexlume.Common;
 using Lexlume.Web.Api.Controllers._Base;
-using LexLume.Api.ReinforcedTypings;
-using LexLume.Api.ReinforcedTypings.Generator;
+using Lexlume.Web.Api.ReinforcedTypings.Generator;
 using Reinforced.Typings.Ast.TypeNames;
 using Reinforced.Typings.Fluent;
 using System.Reflection;
 using ConfigurationBuilder = Reinforced.Typings.Fluent.ConfigurationBuilder;
 
-namespace Lexlume.Api.ReinforcedTypings;
+namespace Lexlume.Web.Api.ReinforcedTypings;
 
 public static class FluentConfiguration
 {
@@ -77,8 +75,8 @@ public static class FluentConfiguration
         builder.ExportAsInterfaces(
             Assembly.GetAssembly(typeof(Domain._Grid.PagingResult<>)).ExportedTypes
             .Where(i => i.Namespace.StartsWith($"{Constants.SOLUTION_NAME}.Domain._Grid") && i.IsClass)
-            .OrderBy(i => i.Name)
             .OrderBy(i => i.Name != nameof(Domain._Grid.PagingResult<object>))
+            .ThenBy(i => i.Name)
             .ToArray(),
             _interfaceConfiguration
             );
@@ -86,8 +84,8 @@ public static class FluentConfiguration
         //builder.ExportAsInterfaces(
         //    Assembly.GetAssembly(typeof(Domain.Searches.SearchOptions)).ExportedTypes
         //    .Where(i => i.Namespace.StartsWith($"{Constants.SOLUTION_NAME}.Domain.Searches") && i.IsClass)
-        //    .OrderBy(i => i.Name)
         //    .OrderBy(i => i.Name != nameof(Domain.Searches.SearchOptions))
+        //    .ThenBy(i => i.Name)
         //    .ToArray(),
         //    _interfaceConfiguration
         //    );
@@ -109,14 +107,19 @@ public static class FluentConfiguration
 
         // Controllers
 
-        builder.ExportAsClasses(
-            Assembly.GetAssembly(typeof(BaseController)).ExportedTypes
-            .Where(i => i.Namespace.StartsWith($"{Constants.SOLUTION_NAME}.Api.Controllers"))
-            .OrderBy(i => i.Name)
+        var controllerTypes = Assembly.GetAssembly(typeof(BaseController))!
+            .ExportedTypes
+            .Where(i => i.Namespace?.StartsWith(
+                $"{Constants.SOLUTION_NAME}.Web.Api.Controllers",
+                StringComparison.Ordinal) == true)
             .OrderBy(i => i.Name != nameof(BaseController))
-            .ToArray(),
+            .ThenBy(i => i.Name)
+            .ToArray();
+
+        builder.ExportAsClasses(
+            controllerTypes,
             _serviceConfiguration
-            );
+        );
     }
 
     private static TBuilder ConfigureTypeMapping<TBuilder>(this TBuilder config)
