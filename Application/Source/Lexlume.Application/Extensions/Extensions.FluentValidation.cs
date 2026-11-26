@@ -4,6 +4,7 @@ using Lexlume.Common.Extensions;
 using Lexlume.Common.Resources;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Linq.Expressions;
 using System.Text.RegularExpressions;
 
 namespace Lexlume.Application.Extensions;

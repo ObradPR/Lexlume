@@ -48,6 +48,102 @@ namespace Lexlume.Persistence.Migrations
 
                     b.ToTable("ErrorLog", "dbo");
                 });
+
+            modelBuilder.Entity("Lexlume.Domain.Entities.Application.User", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<long>("CreatedBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateOfBirth")
+                        .HasColumnType("date");
+
+                    b.Property<long?>("DeletedBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<int?>("GenderId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<long>("LastChangeBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("LastChangeOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SystemRoleId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("DeletedBy");
+
+                    b.HasIndex("IsActive")
+                        .HasFilter("[IsActive] = 1");
+
+                    b.HasIndex("LastChangeBy");
+
+                    b.ToTable("User", "dbo");
+                });
+
+            modelBuilder.Entity("Lexlume.Domain.Entities.Application.User", b =>
+                {
+                    b.HasOne("Lexlume.Domain.Entities.Application.User", "CreatedByUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedBy")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Lexlume.Domain.Entities.Application.User", "DeletedByUser")
+                        .WithMany()
+                        .HasForeignKey("DeletedBy");
+
+                    b.HasOne("Lexlume.Domain.Entities.Application.User", "LastChangeByUser")
+                        .WithMany()
+                        .HasForeignKey("LastChangeBy")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CreatedByUser");
+
+                    b.Navigation("DeletedByUser");
+
+                    b.Navigation("LastChangeByUser");
+                });
 #pragma warning restore 612, 618
         }
     }

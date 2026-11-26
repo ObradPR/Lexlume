@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Lexlume.Application.Identity\Lexlume.Application.Identity.csproj" />
     <ProjectReference Include="..\Lexlume.Common\Lexlume.Common.csproj" />
     <ProjectReference Include="..\Lexlume.Domain\Lexlume.Domain.csproj" />
   </ItemGroup>

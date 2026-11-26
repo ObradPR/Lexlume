@@ -12,12 +12,9 @@ public class MockIdentityUser : IIdentityUser
 
     public string Username { get; set; } = Constants.SYSTEM_USER_USERNAME;
 
-    public IEnumerable<eSystemRole> Roles { get; set; } = [eSystemRole.Admin];
-
     public bool IsAuthenticated { get; set; } = true;
 
-    public bool HasRole(IEnumerable<eSystemRole> roles)
-    {
-        throw new NotImplementedException();
-    }
+    public eSystemRole? RoleId => eSystemRole.Admin;
+
+    public bool HasRole(eSystemRole role) => RoleId >= role;
 }

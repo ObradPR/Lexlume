@@ -31,7 +31,7 @@ public class AuthController(IMediator mediator) : BaseController(mediator)
             new(ClaimTypes.Email, user.Email)
         };
 
-        claims.AddRange(new Claim(ClaimTypes.Role, user.Role);
+        claims.AddRange(new Claim(ClaimTypes.Role, user.Role));
 
         var identity = new ClaimsIdentity(
             claims,

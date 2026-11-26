@@ -52,9 +52,9 @@ public class User : BaseIndexAuditedDomain<User, long>, IConfigurableEntity
     {
         builder.Entity<User>(_ =>
         {
-            _.Property(_ => _.FullName).HasMaxLength(30).IsRequired();
-            _.Property(_ => _.Username).HasMaxLength(30).IsRequired();
-            _.Property(_ => _.Email).HasMaxLength(120).IsRequired();
+            _.Property(_ => _.FullName).HasMaxLength(User.NAME_MAX_LENGTH).IsRequired();
+            _.Property(_ => _.Username).HasMaxLength(User.NAME_MAX_LENGTH).IsRequired();
+            _.Property(_ => _.Email).HasMaxLength(User.EMAIL_MAX_LENGTH).IsRequired();
             _.Property(_ => _.Password).IsRequired();
         });
     }
