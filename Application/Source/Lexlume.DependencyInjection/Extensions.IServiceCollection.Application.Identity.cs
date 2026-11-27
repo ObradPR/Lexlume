@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Authentication.Cookies;
+﻿using Lexlume.Application.Identity.Interfaces;
+using Lexlume.Application.Identity.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -35,6 +37,8 @@ public static partial class Extensions
             });
 
         services.AddAuthorization();
+
+        services.AddScoped<IUserManager, UserManager>();
 
         return services;
     }
