@@ -6,9 +6,9 @@ using System.Net;
 
 namespace Lexlume.Web.Api.Middlewares;
 
-public class ExceptionMiddleware(RequestDelegate next, IExceptionLogger logger)
+public class ExceptionMiddleware(RequestDelegate next)
 {
-    public async Task InvokeAsync(HttpContext context)
+    public async Task InvokeAsync(HttpContext context, IExceptionLogger logger)
     {
         try
         {
